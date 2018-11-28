@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:mvc="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 导入springmvc配置 -->
+    <import resource="applicationContext-mvc.xml" />
+
+    <!--加载系统配置文件-->
+    <context:property-placeholder location="classpath:alipay-config.properties"/>
+
+    <bean class="com.bjpowernode.config.Config">
+        <property name="alipay_public_key" value="${alipay_public_key}" />
+        <property name="app_id" value="${app_id}" />
+        <property name="charset" value="${charset}" />
+        <property name="format" value="${format}"  />
+        <property name="gatewayUrl" value="${gatewayUrl}" />
+        <property name="merchant_private_key" value="${merchant_private_key}" />
+        <property name="sign_type" value="${sign_type}" />
+        <property name="return_url" value="${return_url}" />
+        <property name="notify_url" value="${notify_url}" />
+        <property name="p2p_pay_return_url" value="http://localhost:8082/p2p/loan/alipayBack" />
+    </bean>
+</beans>

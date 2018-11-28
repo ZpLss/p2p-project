@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:mvc="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 导入springmvc配置 -->
+    <import resource="applicationContext-mvc.xml" />
+
+    <!-- 导入服务消费者配置 -->
+    <import resource="applicationContext-dubbo-consumer.xml" />
+
+    <!--加载系统配置文件-->
+    <context:property-placeholder location="classpath:config.properties"/>
+
+    <!--将配置对象交给spring管理-->
+    <bean class="com.bjpowernode.p2p.config.Config">
+        <property name="p2p_pay_alipay_url" value="${p2p_pay_alipay_url}"/>
+        <property name="p2p_pay_alipay_query_url" value="${p2p_pay_alipay_query_url}" />
+    </bean>
+</beans>

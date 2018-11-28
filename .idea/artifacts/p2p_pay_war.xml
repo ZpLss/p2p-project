@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="p2p-pay:war">
+    <output-path>$PROJECT_DIR$/p2p-pay/target</output-path>
+    <root id="archive" name="p2p-pay-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="p2p-pay:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/p2p-QRCode" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-httpClient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-manager/p2p-dataservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-manager/p2p-exterface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-mybatisGenerate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-outAPI" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-timer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/p2p-web" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

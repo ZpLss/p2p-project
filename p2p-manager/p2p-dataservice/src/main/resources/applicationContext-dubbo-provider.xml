@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 服务提供者：应用名称 -->
+    <dubbo:application name="dataservice"/>
+    <!-- 配置zookeeper注册中心 -->
+    <dubbo:registry  protocol="zookeeper" address="192.168.126.129:2181"/>
+
+    <!--产品业务-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.loan.LoanInfoService" ref="loanInfoServiceImpl" version="1.0.0"></dubbo:service>
+
+    <!--用户业务-->
+    <!--<dubbo:service interface="com.bjpowernode.p2p.service.user.UserService" ref="userServiceImpl" version="1.1.0"></dubbo:service>-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.user.UserService" ref="userServiceImpl" timeout="15000" version="1.0.0"></dubbo:service>
+
+    <!--资金业务-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.loan.BidInfoService" ref="bidInfoServiceImpl" timeout="15000" version="1.0.0"></dubbo:service>
+
+    <!--账户业务-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.user.FinanceAccountService" ref="financeAccountServiceImpl" timeout="15000" version="1.0.0"></dubbo:service>
+
+    <!--充值业务-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.loan.RechargeRecordService" ref="rechargeRecordServiceImpl" timeout="15000" version="1.0.0"></dubbo:service>
+
+    <!--收益业务-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.loan.IncomeRecordService" ref="incomeRecordServiceImpl" timeout="15000" version="1.0.0"></dubbo:service>
+
+    <!--生成唯一数字服务-->
+    <dubbo:service interface="com.bjpowernode.p2p.service.loan.OnlyNumberService" ref="onlyNumberServiceImpl" timeout="15000" version="1.0.0"></dubbo:service>
+</beans>

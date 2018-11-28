@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 配置应用名称 -->
+    <dubbo:application name="p2p"/>
+
+    <!-- 配置注册中心 -->
+    <dubbo:registry  protocol="zookeeper" address="192.168.126.129:2181"/>
+
+    <!--收益业务-->
+    <dubbo:reference id="incomeRecordService" interface="com.bjpowernode.p2p.service.loan.IncomeRecordService" check="false" version="1.0.0" ></dubbo:reference>
+
+    <!--充值业务-->
+    <dubbo:reference interface="com.bjpowernode.p2p.service.loan.RechargeRecordService" id="rechargeRecordService" check="false" version="1.0.0" />
+
+</beans>
